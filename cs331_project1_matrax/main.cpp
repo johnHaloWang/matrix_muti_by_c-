@@ -208,7 +208,7 @@ int ** matrix_sub2(int **a, int **b, int size)
 int ** Strassen(int ** A, int ** B, int size)
 {
     int ** C = matrix_allocate(size);
-    if(size==2)
+    if(size<=2)
     {
         C[0][0] = A[0][0] * B[0][0] + A[0][1] * B[1][0];
         C[0][1] = A[0][0] * B[0][1] + A[0][1] * B[1][1];
@@ -310,7 +310,7 @@ int ** Strassen(int ** A, int ** B, int size)
 int ** DQ_rec(int ** A, int ** B, int size)
 {
     int ** C = matrix_allocate(size);
-    if(size==2)
+    if(size<=2)
     {
         C[0][0] = A[0][0] * B[0][0] + A[0][1] * B[1][0];
         C[0][1] = A[0][0] * B[0][1] + A[0][1] * B[1][1];
@@ -380,7 +380,7 @@ int ** DQ_rec(int ** A, int ** B, int size)
     }
     return C;
 }
-
+//Strassen
 void driver3()
 {
     int size=2;
@@ -410,7 +410,7 @@ void driver3()
      }
     cout<<"finish....."<<endl;
 }
-
+//dc
 void driver2()
 {
     int size=2;
@@ -440,7 +440,7 @@ void driver2()
      }
     cout<<"finish....."<<endl;
 }
-
+//classic
 void driver1()
 {
 
@@ -515,6 +515,6 @@ void driver4()
 
 int main(int argc, char *argv[])
 {
-    driver4();
+    driver2();
     return 0;
 }
